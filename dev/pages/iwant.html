@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/dev/styles/app.css">
+    <script type="text/javascript" src="/dev/scripts/lib/sea.js"></script>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="/dev/original/html5shiv/html5shiv-min.js"></script>
+      <script src="/dev/original/respondjs/respond-min.js"></script>
+    <![endif]-->
+    <script type="text/javascript">window.HEALTH = {assetsPath:"/dev"}</script>
+    <script type="text/javascript" src="/dev/scripts/lib/config.js"></script>
+  </head>
+  <body>
+    <div class="header">
+		<div class="contain">
+			<div class="fleft hleft">
+				<img src="/images/zfw_logo_20160105_94x44.png" class="logo fleft"/>
+				<div class="nav fleft">
+					<ul>
+						<li>首页</li>
+						<li class="on">精选服务</li>
+					</li>
+				</div>
+			</div>
+			<button class="btn btn-white border-gray font-red iwantbtn">成为服务商</button>
+		</div>
+	</div>
+	<div class="container shop-apply">
+		
+		<div class="apply-title">
+			<div class="apply-icon"><i class="iconfont">&#xe60d;</i></div>
+			<h3>开店申请</h3>
+			<p>您正在申请开店，为了让您的申请尽快通过，请详细描述你的简历和你提供的服务。</p>
+		</div>
+		<form id="applyForm">
+			<div class="apply-form">
+				<div class="half-contral clearfix">
+					<div class="half-item">
+						<div><label>真实姓名</label><input type="text" name="name"><i class="iconfont" data-toggle="tooltip" data-placement="left" ></i></div>
+					</div>
+					<div class="half-item">
+						<div><label>手机号</label><input type="text" name="mobile"><i class="iconfont" data-toggle="tooltip" data-placement="left" ></i></div>
+					</div>
+				</div>
+				<div class="panel">
+					<div class="panel-heading">能力描述</div>
+					<div class="panel-body">
+						<textarea placeholder="示例：本人从事XX行业N年，有较为丰富的xx经验，能解决XX问题。" name="discription" id="discriptionTextarea"></textarea>
+						<i class="iconfont" data-toggle="tooltip" data-placement="left"></i>
+					</div>
+				</div>
+			</div>
+			<div class="text-center">
+				<button type="submit" class="btn btn-white border-gray">提交</button>
+			</div>
+		</form>
+	</div>
+	<script type="text/javascript">
+	seajs.use(["$","textareaAutoSize","jqueryValidate","jqueryui","tooltip"],function(){
+		var error = {};
+		$("#discriptionTextarea").textareaAutoSize();
+		$('[data-toggle="tooltip"]').tooltip()
+		$.validator.addMethod("mobile", function(value, element, param) {
+	        var reg = /(^(0|86|17951)?(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57])[0-9]{8}$)/;
+	        return reg.test(value);
+	    },"请输入有效的手机号码");
+	    $("#applyForm").validate({
+	    	ignore:"",
+	    	submitHandler: function (form) {
+	    		var $form = $(form);
+	    		var data = $form.serialize();
+	    		var url = $("#applyForm").attr("action");
+	    		return console.log(data);
+	    		jQuery.post(url, data, function(res){
+
+	    		}, "json")
+	    	},
+	    	onkeyup:false,
+			errorPlacement:function(error, element){
+				element.siblings(".iconfont").removeClass("icon-success").addClass("icon-error").tooltip("destroy").tooltip({
+					title:error.html()
+				});
+			},
+			success:function(error, element){
+				$(element).siblings(".iconfont").addClass("icon-success").removeClass("icon-error").tooltip("destroy")
+			},
+			rules:{
+				name:{
+					required:true,
+					maxlength:20
+				},
+				mobile:{
+					required:true,
+					mobile:true
+				},
+				discription:{
+					required:true,
+					maxlength:800
+				}
+			}
+	    })
+	})
+	</script>
+  </body>
+</html>

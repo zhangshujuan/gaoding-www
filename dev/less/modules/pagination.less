@@ -1,0 +1,26 @@
+.pagination {
+	padding: 12px;
+	text-align: center;
+	> a,>span {
+		display: inline-block;
+		padding: 2px 7px;
+		border-radius: 2px;
+		margin:0 5px;
+		color: #000;
+		font-size: 14px;
+	}
+	.current {
+		background-color: #fe9890;
+		color: #fff;
+		&.prev,&.next {
+			color: #000;
+			background-color: #fff;
+		}
+	}
+	.prev {
+		margin-right: 30px;
+	}
+	.next {
+		margin-left: 30px;
+	}
+}

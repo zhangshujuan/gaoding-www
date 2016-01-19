@@ -1,0 +1,25 @@
+{{#each commentVoList}}
+<li class="media">
+    <div class="media-left">
+        <img class="detail-uimg" src="{{member.userface}}">
+    </div>
+
+    <div class="media-body">
+        <div class="clearfix">
+            <h4 class="pull-left">
+                <a href="#">{{member.name}}</a><span>{{member.company}}  /  {{member.title}}</span>
+            </h4>
+            <div class="pull-right pstars">
+                {{#is comment.score ">" 0}}
+                {{#forNum 1 comment.score}}
+                    <i class="iconfont">&#xe633;</i>
+                {{/forNum}}
+                {{/is}}
+                <span>评价</span>
+            </div>
+        </div>
+        <p>{{comment.content}}</p>
+        <div class="text-right time">{{date}}</div>
+    </div>
+</li>
+{{/each}}

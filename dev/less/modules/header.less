@@ -1,0 +1,124 @@
+/*导航**/
+.header{
+	width: 100%;
+	background: #fff;
+	height: 70px;
+	line-height: 70px;
+	border-bottom: 2px solid #e5e5e5;
+	.logo{
+		width: 93px;
+    	height: 44px;
+   		margin: 12px 30px 0 30px;
+	}
+	.logo-text {
+		margin:25px 60px 0 0;
+	}
+	.hleft{
+		width:100%;
+	}
+	.nav{
+		li{
+			float: left;
+			margin-left: 36px;
+			cursor: pointer;
+			&:hover, &.on{
+				color: #f7574b;
+			}
+		}
+	}
+	.weixin-number {
+		color: #f56d5d;
+		a:hover {
+			color: #f75a4e;
+			.wxinfo {
+				display: block;
+				width: 298px;
+				height: 167px;
+			}
+		} 
+		.iconfont {
+			font-size: 20px;
+			color:#fc9e92;
+		}
+		.wxinfo {
+			display: none;
+			border: 1px solid #e5e5e5;
+			position: absolute;
+			background-color: #fff;
+			z-index:999;
+			top: 68px;
+			img {
+				display: inline-block;
+				margin: 33px 15px 0 40px;
+			}
+			p {
+				display: inline-block;
+				line-height: 25px;
+				margin: 58px 0;
+			}
+			.traw,.traw:after {
+				position: absolute;
+				border-style: solid;
+			}
+			.traw {
+				left: 42px;
+				top: -10px;
+				border-width: 0 10px 11px 10px;
+				border-color: transparent transparent #e5e5e5 transparent;
+				&:after {
+					content: " ";
+					border-width: 0 10px 10px 10px;
+					left: -10px;
+					top: 1px;
+					border-color: transparent transparent #fff transparent;
+				}
+			}
+		}
+	}
+	.hright{
+		margin: 13px 100px 0px 0px;
+	}
+}
+.iwantbtn{
+	width: 144px;
+	height: 44px;
+}
+.pull-right-btn{
+	margin-right: 3px;
+}
+.iwantbtn:hover {
+	border: 2px solid #f7574b !important;
+	color: #f7574b;
+	outline: 0;
+}
+.iwantbtn:focus {
+	color: #f7574b;
+}
+.border-red{
+	border: 2px solid #f56d5d;
+}
+.pop-wxinfo {
+	background-color: #fff;
+	z-index:999;
+	text-align: center;
+	width: 100px;
+	img {
+		display: inline-block;
+		width: 100px;
+		vertical-align: top;
+	}
+	span {
+		display: inline-block;
+		line-height: 24px;
+		margin: 10px 0 0 0;
+		font-size: 16px;
+	}
+}
+.popover{
+	box-shadow:none;
+	border:1px solid #e5e5e5;
+	border-radius: 0px;
+};
+.popover-content{
+	padding: 20px 22px;
+}

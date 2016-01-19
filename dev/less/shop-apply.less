@@ -1,0 +1,95 @@
+.shop-apply {
+	width: 750px;
+	padding: 40px 0;
+	overflow: hidden;
+	.apply-title {
+		text-align: center;
+		margin-bottom: 35px;
+		> h3 {
+			color: #f65f4c;
+			font-size: 20px;
+			margin: 15px 0;
+		}
+		> p {
+			color: #464f54;
+		}
+	}
+	.apply-icon {
+		display: inline-block;
+		width: 70px;
+		height: 70px;
+		background-color: #f65f4c;
+		border-radius: 4px;
+		text-align: center;
+		.iconfont {
+			color: #fff;
+			line-height: 70px;
+			font-size: 41px;
+		}
+	}
+	textarea,input,input:focus,textarea:focus {
+		border: 0;
+		outline: 0;
+		color: #464f54;
+	}
+	.panel {
+		margin-top: 12px;
+		position: relative;
+		.iconfont {
+			position: absolute;
+			right: 20px;
+			bottom: 20px;
+			cursor: pointer;
+		}
+		textarea {
+			width: 100%;
+			resize:none;
+			height: 135px;
+			box-sizing: border-box;
+			//max-height: 94px; /* optional, but recommended */
+			min-height: 135px;
+			overflow-x: hidden; /* for Firefox (issue #5) */
+		}
+	}
+	.btn {
+		width: 196px;
+		height: 45px;
+		color: #464f54;
+	}
+	.icon-error {
+		color: #f7574b;
+	}
+	.icon-success {
+		color: #AADF43;
+	}
+	.half-contral {
+		width: 770px;
+		overflow: hidden;
+		.half-item {
+			width: 369px;
+			margin-right: 12px;
+			background-color: #fff;
+			position: relative;
+			float: left;
+			> div {
+				padding: 20px;
+			}
+			label {
+				font-size: 16px;
+				color: #88939a;
+				margin-right: 25px;
+			}
+			input {
+				width: 220px;
+				margin-right: 4px;
+				line-height: 18px;
+			}
+			.iconfont {
+				position: absolute;
+				right: 20px;
+				top: 20px;
+				cursor: pointer;
+			}
+		}
+	}
+}
