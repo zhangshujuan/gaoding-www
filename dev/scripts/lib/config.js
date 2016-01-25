@@ -1,6 +1,6 @@
 (function() {
     var root = this;
-    var assetsPath = "";
+    var assetsPath = "/dev";
     var config = {
         base: typeof process === "undefined" ? window.HEALTH.assetsPath : null,
 		vars: {
@@ -14,18 +14,16 @@
             // plugins
             "$": 'pluginPath/jquery/jquery-{jqueryVersion}',
             "jquery": 'pluginPath/jquery/jquery-{jqueryVersion}',
-            "rails": 'pluginPath/jquery-ujs/rails',
-            "pagination":'pluginPath/pagination/jquery-pagination',
-            "jqPaginator":'pluginPath/pagination/jqPaginator',
-            "textareaAutoSize":'pluginPath/autosize/textarea-autosize',
-            "jqueryValidate":'pluginPath/validate/jquery-validate',
             "jqueryui":'pluginPath/{jqueryui}',
             "tooltip":'pluginPath/bs/tooltip',
             "bootstrap":'pluginPath/bs/index',
             "handlebars":'pluginPath/template/index',
             "handlebars-helper":'pluginPath/template/handlebars-helper',
-            "common":'utilsPath/common',
-            "dataBind":'scripts/widget/databind'
+            "common":'scripts/utils/common',
+            "popover":'scripts/plugins/bs/popover',
+            "uploader":'pluginPath/uploader/uploader',
+            "handlebars":'pluginPath/template/handlebars',
+            "dataBind":'widget/databind'
         },
         paths: {
             pluginPath: 'scripts/plugins',
